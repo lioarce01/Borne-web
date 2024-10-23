@@ -27,9 +27,9 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#08080C] text-[#F3F3F7]">
+    <div className="min-h-screen bg-gradient-to-br from-[#08080C] to-[#10101a] text-[#F3F3F7]">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
+      <section className="min-h-screen flex flex-col justify-center items-center container mx-auto px-4 text-center">
         <div
           className={`mb-6 flex justify-center items-center transition-all duration-1000 ease-out ${
             isVisible
@@ -38,7 +38,7 @@ export default function LandingPage() {
           }`}
         >
           <Command className="w-16 h-16 text-[#F3F3F7] mr-4" />
-          <h1 className="text-5xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#F3F3F7] to-[#A0A0A8]">
+          <h1 className="text-6xl sm:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#F3F3F7] to-[#A0A0A8]">
             Borne
           </h1>
         </div>
@@ -50,13 +50,12 @@ export default function LandingPage() {
           The next-gen CLI to supercharge your Git and GitHub workflow
         </p>
         <a
-          href="https://www.npmjs.com/package/borne"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#features"
+          className="transition-all duration-300 ease-in-out transform hover:scale-105"
         >
           <Button
             size="lg"
-            className={`bg-[#F3F3F7] text-[#08080C] hover:bg-[#A0A0A8] transition-all duration-300 ease-in-out transform hover:scale-105 rounded-md ${
+            className={`bg-[#F3F3F7] text-[#08080C] hover:bg-[#A0A0A8] rounded-md shadow-md ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -68,7 +67,7 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 py-16">
+      <section id="features" className="container mx-auto px-4 py-16">
         <h2 className="mb-12 text-center text-3xl sm:text-4xl font-bold text-[#F3F3F7]">
           Features
         </h2>
@@ -97,7 +96,7 @@ export default function LandingPage() {
           ].map((feature, index) => (
             <Card
               key={index}
-              className={`bg-[#12121A] text-[#F3F3F7] border-[#20202A] transition-all duration-300 ease-out transform hover:scale-105 hover:bg-[#1A1A24] ${
+              className={`bg-[#0a0a0f] text-[#F3F3F7] border-none shadow-md transition-all duration-300 ease-out transform hover:scale-105 hover:bg-[#1A1A24] ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
@@ -126,7 +125,7 @@ export default function LandingPage() {
           Quick Start
         </h2>
         <Card
-          className={`bg-[#12121A] text-[#F3F3F7] border-[#20202A] transition-all pt-6 duration-300 ease-out ${
+          className={`bg-[#0a0a0f] text-[#F3F3F7] border-none shadow-md transition-all pt-6 duration-300 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -152,7 +151,7 @@ export default function LandingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Documentation Section */}
           <Card
-            className={`bg-[#12121A] text-[#F3F3F7] border-[#20202A] transition-all duration-500 ease-out ${
+            className={`bg-[#0a0a0f] text-[#F3F3F7] border-none shadow-md transition-all duration-300 ease-in-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -175,16 +174,16 @@ export default function LandingPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button className="mt-4 bg-[#F3F3F7] text-[#08080C] hover:bg-[#A0A0A8] transition-all duration-300 ease-in-out transform hover:scale-105 rounded-md">
+                <Button className="mt-4 bg-[#F3F3F7] text-[#08080C] hover:bg-[#A0A0A8] rounded-md transition-all duration-300 ease-in-out transform hover:scale-105">
                   Read Docs
                 </Button>
               </a>
             </CardContent>
           </Card>
 
-          {/* Community Section */}
+          {/* Package Section*/}
           <Card
-            className={`bg-[#12121A] text-[#F3F3F7] border-[#20202A] transition-all duration-500 ease-out ${
+            className={`bg-[#0a0a0f] text-[#F3F3F7] border-none shadow-md transition-all duration-300 ease-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -192,19 +191,25 @@ export default function LandingPage() {
           >
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-[#F3F3F7]">
-                <Users className="h-6 w-6" />
-                <span>Join Our Community</span>
+                <Book className="h-6 w-6" />{" "}
+                {/* Cambié el icono a uno relacionado con paquetes */}
+                <span>Install the Package</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-[#A0A0A8]">
-                Connect with other Borne users, share your experiences, and get
-                help from our active community. Join our forums or chat channels
-                to stay up-to-date with the latest Borne news and tips.
+                Easily install Borne by using npm. Simply run the command below
+                to get started with the latest version of Borne.
               </CardDescription>
-              <Button className="mt-4 bg-[#F3F3F7] text-[#08080C] hover:bg-[#A0A0A8] transition-all duration-300 ease-in-out transform hover:scale-105 rounded-md">
-                Join Community
-              </Button>
+              <a
+                href="https://www.npmjs.com/package/borne"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="mt-4 bg-[#F3F3F7] text-[#08080C] hover:bg-[#A0A0A8] transition-all duration-300 ease-in-out transform hover:scale-105 rounded-md">
+                  Install Now
+                </Button>
+              </a>
             </CardContent>
           </Card>
         </div>
@@ -233,20 +238,20 @@ export default function LandingPage() {
                 GitHub
               </a>
               <a
-                href="https://github.com/lioarce01/Borne-CLI"
+                href="https://www.linkedin.com/in/lionel-arce/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#A0A0A8] hover:text-[#F3F3F7] transition-colors duration-300"
               >
-                Documentation
+                Linkedin
               </a>
               <a
-                href="https://github.com/lioarce01/Borne-CLI"
+                href="https://www.npmjs.com/package/borne"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#A0A0A8] hover:text-[#F3F3F7] transition-colors duration-300"
               >
-                Support
+                NPM
               </a>
             </div>
           </div>
